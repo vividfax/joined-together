@@ -1,0 +1,20 @@
+{
+    "introduction": [
+        {
+            "welcome": "Hey, it’s been a long old lockdown. We’re still dying to catch up with friends but sometimes it’s a bit awkward ‘cus it’s been a while. Let’s reconnect a bit.",
+            "introduction": "Remember before? Blahhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+        }
+    ],
+    "story": [
+        {
+        "scenario": "I am sweating. I’m sweating too much aren’t I? This must be the warmest cinema in the world. Or is it cold? And this is a cold sweat? Don’t start shivering. No one wants to touch someone who looks like they have the flu. Bad enough I had the extra spicey Tacos. Okay. Focus.",
+        "choice1": "Wipe my hands on my trousers?",
+        "choice2": "Go for the sneaky deodorant spray?",
+        "outcome1": "",
+        "outcome2": ""
+            },
+            {
+
+            }
+        ]
+}
