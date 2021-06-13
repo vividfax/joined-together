@@ -8,7 +8,7 @@ let colors = {
 let rgbColors = {
   dark: "93,87,97",
 };
-
+let started = false;
 let intro;
 let story;
 let end;
@@ -49,9 +49,8 @@ function setup() {
   leftHand = new Hand(leftImage, noOfHands);
   leftHand.setup();
   rightHand.setup();
-
   scenes = new DialogScene(leftHand, rightHand);
-  intro = new IntroScene(leftHand, rightHand, scenes);
+
   end = new EndingScene(leftHand, rightHand, scenes);
   buttonOne = new Button(
     width / 4 - 180,
@@ -69,6 +68,10 @@ function setup() {
   );
   buttonOne.setup();
   buttonTwo.setup();
+  buttonOne.hide();
+  buttonTwo.hide();
+  intro = new IntroScene(leftHand, rightHand, scenes, buttonOne, buttonTwo);
+  scenes.hide();
   intro.setup();
   //   noLoop();
   createGrain();
@@ -101,5 +104,17 @@ function createGrain() {
         set(i, j, color("#FFE986"));
       }
     }
+  }
+}
+function mouseClicked() {
+  if (started == false) {
+    intro.showHide();
+    buttonOne.show();
+    buttonTwo.show();
+    scenes.show();
+    scenes.bodyTextElement.show();
+    scenes.nextScene(0);
+    audio.play();
+    started = true;
   }
 }

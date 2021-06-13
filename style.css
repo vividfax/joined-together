@@ -24,7 +24,9 @@ p {
   margin-bottom: 120px;
   padding: 20px;
   width: 35vw;
+  display: none;
   line-height: 1.6;
+  border-radius: 3px;
   background-color: rgba(255, 255, 255, 0.8);
 }
 .outcome {
@@ -33,4 +35,21 @@ p {
 }
 .outcome::before {
   content: "... ";
+}
+.hide {
+  display: none;
+}
+h1 {
+  position: absolute;
+  font-family: "Cabin Sketch", Avenir, sans-serif;
+  font-size: 90px;
+  text-align: center;
+}
+#headerHolder {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

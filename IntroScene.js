@@ -1,5 +1,5 @@
 class IntroScene {
-  constructor(leftHand, rightHand, dialogScene) {
+  constructor(leftHand, rightHand, dialogScene, buttonOne, buttonTwo) {
     this.inProgress = true;
     this.leftHand = leftHand;
     this.rightHand = rightHand;
@@ -7,33 +7,54 @@ class IntroScene {
     this.lowerHandPos;
     this.movingPos;
     this.dialogScene = dialogScene;
+    this.buttonOne = buttonOne;
+    this.buttonTwo = buttonTwo;
+    this.title = select("h1");
+    this.handsMovedDown = false;
+    this.handsMovedUp = false;
+    this.started = false;
   }
   setup() {
     textFont("Cabin Sketch");
     textAlign(CENTER, CENTER);
     this.upperHandPos = height - this.leftHand.h;
     this.lowerHandPos = percentToPixelHeight(80);
-    this.addText();
     this.movingPos = this.upperHandPos;
   }
-  addText() {
-    textSize(90);
-    fill("rgba(" + rgbColors.dark + ", 1)");
-    text("OUT\nOF\nTOUCH", width / 2, height / 2);
+  showHide() {
+    this.title.toggleClass("hide");
   }
-  moveHandsDown() {
-    if (this.movingPos < this.lowerHandPos) {
+  moveHandsUp() {
+    console.log(this.movingPos, " ", this.upperHandPos, this.handsMovedUp);
+    if (this.movingPos > this.upperHandPos && this.handsMovedUp == false) {
+      console.log("test");
       this.leftHand.y = this.movingPos;
       this.rightHand.y = this.movingPos;
-      this.movingPos += 10;
+      this.movingPos -= 50;
+    } else {
+      this.showHide();
+      this.dialogScene.show();
+      this.buttonOne.show();
+      this.buttonTwo.show();
+      this.handsMovedUp = true;
     }
-    return false;
   }
-  start() {
-    this.inProgress = true;
+  //   moveHandsDown() {
+  //     if (this.movingPos < this.lowerHandPos) {
+  //       this.leftHand.y = this.movingPos;
+  //       this.rightHand.y = this.movingPos;
+  //       this.movingPos += 50;
+  //     } else if (this.handsMovedDown == true && this.handsMovedUp == false) {
+  //       this.handsMovedDown == true;
+  //     }
+  //   }
 
-    let handMoved = false;
-    let textShown = false;
-    this.inProgress = this.moveHandsDown();
+  start() {
+    // if (this.handsMovedDown == false) {
+    //   this.moveHandsDown();
+    // }
+    // if (this.handsMovedUp == false && this.handsMovedDown == true) {
+    //   this.moveHandsUp();
+    // }
   }
 }

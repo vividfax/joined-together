@@ -37,15 +37,16 @@ class DialogScene {
       buttonOne.changeText(story.story[this.currentScene].choice1);
       buttonTwo.changeText(story.story[this.currentScene].choice2);
     }
-    if (this.currentScene == story.story.length - 1) {
+    console.log(this.currentScene, " ", story.story.length);
+    if (this.currentScene == story.story.length) {
       if (this.endOutcome == "positive") {
-        outcome = story.story[this.currentScene].outcome1;
+        outcome = story.story[this.currentScene - 1].outcome1;
       }
       if (this.endOutcome == "negative") {
-        outcome = story.story[this.currentScene].outcome2;
+        outcome = story.story[this.currentScene - 1].outcome2;
       }
       console.log(story.story, this.currentScene);
-      this.bodyTextElement.html(outcome);
+      this.bodyTextElement.html(outcome, false);
       buttonOne.hide();
       buttonTwo.hide();
       this.endButton = new Button(
@@ -58,7 +59,7 @@ class DialogScene {
       this.endButton.setup();
       this.endButton.makeEvents();
     }
-    if (this.currentScene < story.story.length - 1) this.currentScene++;
+    if (this.currentScene < story.story.length) this.currentScene++;
   }
   moveHandsFurther() {
     this.leftHand.x += 300;
