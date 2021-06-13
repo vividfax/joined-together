@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<title>joined together</title>
+    <title>joined together</title>
 
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.scribble.js"></script>
+    <script src="Utils.js"></script>
+    <script src="Button.js"></script>
+    <script src="Hand.js"></script>
+    <script src="IntroScene.js"></script>
+    <script src="DialogScene.js"></script>
+    <script src="sketch.js"></script>
 
-	<script src="libraries/p5.min.js"></script>
-	<script src="libraries/p5.scribble.js"></script>
-	<script src="Utils.js"></script>
-	<script src="Hand.js"></script>
-	<script src="IntroScene.js"></script>
-	<script src="DialogScene.js"></script>
-	<script src="sketch.js"></script>
-	<!-- <script src="SceneManager.js"></script> -->
-
-	<style>
-		body {
-      		margin: 0;
-			padding: 0;
-			overflow: hidden;
-		}
-		canvas {
-			margin: auto;
-		}
-	</style>
-</head>
-<body>
-</body>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      canvas {
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dialog">
+      <h2 id="dialogHeaderText"></h2>
+      <p class="bodyText" id="dialogBodyText"></p>
+    </div>
+  </body>
 </html>

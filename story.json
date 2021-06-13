@@ -1,20 +1,25 @@
 {
-    "introduction": [
-        {
-            "welcome": "Hey, it’s been a long old lockdown. We’re still dying to catch up with friends but sometimes it’s a bit awkward ‘cus it’s been a while. Let’s reconnect a bit.",
-            "introduction": "Remember before? Blahhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
-        }
-    ],
-    "story": [
-        {
-        "scenario": "I am sweating. I’m sweating too much aren’t I? This must be the warmest cinema in the world. Or is it cold? And this is a cold sweat? Don’t start shivering. No one wants to touch someone who looks like they have the flu. Bad enough I had the extra spicey Tacos. Okay. Focus.",
-        "choice1": "Wipe my hands on my trousers?",
-        "choice2": "Go for the sneaky deodorant spray?",
-        "outcome1": "",
-        "outcome2": ""
-            },
-            {
-
-            }
-        ]
+  "introduction": [
+    {
+      "welcome": "Hey, it’s been a long old lockdown. We’re still dying to catch up with friends but sometimes it’s a bit awkward ‘cus it’s been a while. Let’s reconnect a bit.",
+      "introduction": "Remember before? Blahhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+    }
+  ],
+  "story": [
+    {
+      "scenario": "I am sweating. I’m sweating too much aren’t I? This must be the warmest cinema in the world. Or is it cold? And this is a cold sweat? Don’t start shivering. No one wants to touch someone who looks like they have the flu. Bad enough I had the extra spicey Tacos. Okay. Focus.",
+      "choice1": "Wipe my hands on my trousers?",
+      "choice2": "Go for the sneaky deodorant spray?",
+      "outcome1": "",
+      "outcome2": ""
+    },
+    {
+      "scenario": "I need to pee. I absolutely need to hold it in. Whatever you do, don’t pee yourself on the first date. Just wait until you get home to your nice clean bathroom where nobody can hear you go. Concentrate on the movie. Nope. Not happening, time to go. You’re a grown women, just stand up and excuse yourself. Why did I get the extra large slushy?",
+      "choice1": "Hold in it five more minutes",
+      "choice2": "Tell him you will be right back?",
+      "outcome1": "",
+      "outcome2": ""
+    },
+    {}
+  ]
 }
