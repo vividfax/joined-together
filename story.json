@@ -10,15 +10,15 @@
       "scenario": "I am sweating. I’m sweating too much aren’t I? This must be the warmest cinema in the world. Or is it cold? And this is a cold sweat? Don’t start shivering. No one wants to touch someone who looks like they have the flu. Bad enough I had the extra spicey Tacos. Okay. Focus.",
       "choice1": "Wipe my hands on my trousers?",
       "choice2": "Go for the sneaky deodorant spray?",
-      "outcome1": "",
-      "outcome2": ""
+      "outcome1": "Whole cinema is looking at me like a weirdo. She is so embarrassed.",
+      "outcome2": "Nice, nice. Just a bit clammy. Trust the deodorant is holding. "
     },
     {
       "scenario": "I need to pee. I absolutely need to hold it in. Whatever you do, don’t pee yourself on the first date. Just wait until you get home to your nice clean bathroom where nobody can hear you go. Concentrate on the movie. Nope. Not happening, time to go. You’re a grown women, just stand up and excuse yourself. Why did I get the extra large slushy?",
       "choice1": "Hold in it five more minutes",
       "choice2": "Tell him you will be right back?",
-      "outcome1": "",
-      "outcome2": ""
+      "outcome1": "God. That was the worst thing that has ever happened to anyone. I can’t believe I face planted. Why did I hold it so long?",
+      "outcome2": "Oh my god. I feel so much better."
     },
     {}
   ]

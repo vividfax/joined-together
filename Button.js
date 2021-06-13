@@ -23,6 +23,7 @@ class Button {
     // rectMode(CORNER);
     // textLeading(26);
     let p5elt = createButton("Unchanged - use Button.changeText to update");
+    this.style(p5elt);
     p5elt.position(this.x, this.y);
     p5elt.id(this.id);
     this.domElement = select("#" + this.id).elt;
@@ -38,5 +39,8 @@ class Button {
       // animate hands
       // change text
     };
+  }
+  style(button) {
+    button.class("btn");
   }
 }

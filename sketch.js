@@ -39,9 +39,9 @@ function preload() {
 
   leftImage = loadImage("assets/lefthand.png");
   rightImage = loadImage("assets/righthand.png");
-  curtain = loadImage("assets/curtain-2.jpg");
+  curtain = loadImage("assets/curtain.jpg");
 
-  audio = new Audio("assets/projector-2.ogg");
+  audio = new Audio("assets/cinema.ogg");
   audio.loop = true;
 }
 
@@ -49,6 +49,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   textFont("Cabin Sketch");
   textAlign(CENTER, CENTER);
+
   let distance = width / 8;
 
   rightHand = new Hand(width / 2 + distance, height - imgHeight, leftImage);
