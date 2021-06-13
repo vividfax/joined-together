@@ -1,25 +1,81 @@
 {
   "introduction": [
     {
-      "welcome": "Hey, it’s been a long old lockdown. We’re still dying to catch up with friends but sometimes it’s a bit awkward ‘cus it’s been a while. Let’s reconnect a bit.",
-      "introduction": "Remember before? Blahhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+      "welcome": "<p>Hey, it’s been a long old lockdown. We’re still dying to catch up with friends but sometimes it’s a bit awkward ‘cus it’s been a while. Don’t worry, we all threw our social skills out the window.</p><p>Let’s reconnect a bit, reach out, and remember what it is to touch.</p>"
     }
   ],
   "story": [
     {
-      "scenario": "I am sweating. I’m sweating too much aren’t I? This must be the warmest cinema in the world. Or is it cold? And this is a cold sweat? Don’t start shivering. No one wants to touch someone who looks like they have the flu. Bad enough I had the extra spicey Tacos. Okay. Focus.",
-      "choice1": "Wipe my hands on my trousers?",
-      "choice2": "Go for the sneaky deodorant spray?",
-      "outcome1": "Whole cinema is looking at me like a weirdo. She is so embarrassed.",
-      "outcome2": "Nice, nice. Just a bit clammy. Trust the deodorant is holding. "
+      "class": "he",
+      "scenario": "<p>I am sweating.</p><p>I’m sweating too much aren’t I? This must be the warmest cinema in the world.</p><p>Or is it cold? And this is a cold sweat? Don’t start shivering.</p><p>No one wants to touch someone who looks like they have the flu.</p><p>Bad enough I had the extra spicy Tacos.</p><p>Okay.</p><p>Focus.</p>",
+      "choice1": "Go for the sneaky deodorant spray?",
+      "choice2": "Wipe my hands on my trousers?",
+      "outcome1": "<p class='outcome'>Whole cinema is looking at me like a weirdo. She is so embarrassed.",
+      "outcome2": "<p class='outcome'>Nice, nice. Just a bit clammy. Trust the deodorant is holding."
     },
     {
-      "scenario": "I need to pee. I absolutely need to hold it in. Whatever you do, don’t pee yourself on the first date. Just wait until you get home to your nice clean bathroom where nobody can hear you go. Concentrate on the movie. Nope. Not happening, time to go. You’re a grown women, just stand up and excuse yourself. Why did I get the extra large slushy?",
+      "class": "she",
+      "scenario": "<p>I need to pee.</p><p>I absolutely need to hold it in.</p><p>Whatever you do, don’t pee yourself on the first date.</p><p>Just wait until you get home to your nice clean bathroom where nobody can hear you go.</p><p>Concentrate on the movie.</p><p>Nope.</p><p>Not happening, time to go.</p><p>You’re a grown woman, just stand up and excuse yourself.</p><p>Why did I get the extra large slushy?</p>",
       "choice1": "Hold in it five more minutes",
       "choice2": "Tell him you will be right back?",
-      "outcome1": "God. That was the worst thing that has ever happened to anyone. I can’t believe I face planted. Why did I hold it so long?",
-      "outcome2": "Oh my god. I feel so much better."
+      "outcome1": "<p class='outcome'>God. That was the worst thing that has ever happened to anyone. I can’t believe I face planted. Why did I hold it so long?</p>",
+      "outcome2": "<p class='outcome'>Oh my god. I feel so much better.</p>"
     },
-    {}
+    {
+      "scenario": "<p>Okay, she’s back.</p><p>She hasn’t just gone home and left you sitting on your own like a loser.</p><p>Is she enjoying this? I have absolutely no idea what this film is about.</p><p>Is it good even? I didn’t pick it.</p><p>What if she asked me about it afterwards? Maybe I should google a review so that I can sound smart.</p><p>She knows everything, always doing these obscure pop culture references.</p><p>I love it when she does that.</p>",
+      "choice1": "Look up a review on my phone?",
+      "choice2": "Turn it off and try to relax",
+      "outcome1": "<p class='outcome'>Aww man, does she think I’m bored?</p>",
+      "outcome2": "<p class='outcome'>She likes you. She told you. Be yourself. You got this.</p>"
+    },
+    {
+      "scenario": "<p>Is thirty too old to be making out in the cinema?</p><p>I would have puked if I'd seen that as a teenager.</p><p>Everyone at work is probably out at the bar, gossiping about us.</p><p>I wonder who the last person he kissed was?</p><p>He seems so shy.</p><p>Maybe I should have picked a horror movie and then I could do that whole I damsel in distress thing.</p><p>Am I coming off as stand-offish?</p>",
+      "choice1": "Pull my legs up and lean closer",
+      "choice2": "Should I ask him if he is okay?",
+      "outcome1": "<p class='outcome'>I can feel the air. It's like there’s an energy between us.</p>",
+      "outcome2": "<p class='outcome'>I have no idea what he said.</p>"
+    },
+    {
+      "scenario": "<p>I have no idea what I am doing.</p><p>I should know how dates work at this age.</p><p>Is she here as like a friends thing? How do I know she wants me to make a move?</p><p>Get a grip.</p><p>What’s the worst that could happen?</p><p>She could laugh at you and tell everyone at work you are a bad kisser.</p><p>Nickname you the big lanky washing machine.</p><p>Concentrate, what’s your next move?</p>",
+      "choice1": "Look at her until she turns round and then lean in for a kiss?",
+      "choice2": "Edge my hand closer to hers",
+      "outcome1": "<p class='outcome'>Obviously, she now thinks I am weirdo for staring at her and that I have some sort of ear fetish.</p>",
+      "outcome2": "<p class='outcome'>Okay. This is good. Maybe I am not a total disaster. Maybe I’m a catch.</p>"
+    },
+    {
+      "scenario": "<p>Sweet and salted popcorn is the best</p><p>I wonder which maverick usher was like this is what the people want!</p><p>Doesn’t even ask sweet or salted, just starts handing out the extra large boxes!</p><p>Am I eating too much popcorn? Is popcorn breath a thing?</p><p>It’s good he is into mix and matching.</p><p>He’s cute, but making me choose one or the other is a deal breaker</p>",
+      "choice1": "Take another handful of popcorn?",
+      "choice2": "If I eat more he will think I am fat.",
+      "outcome1": "<p class='outcome'>We’re so close to touching, I can feel the hairs on his hands. It’s electric.</p>",
+      "outcome2": "<p class='outcome'>I can’t even put a box of popcorn on the floor without throwing it all round me.</p>"
+    },
+    {
+      "scenario": "<p>My heart is racing, could be having a stroke.</p><p>What age is too young to have a stroke? Maybe it’s a blood clot in my brain and I am going to die.</p><p>Seriously, how am I not better at this by now?</p><p>She is awesome.</p><p>I will never meet anyone as cool or as interesting or as smart again.</p><p>Can’t mess this up. Can't mess this up.</p>",
+      "choice1": "Reach out a pinkie finger",
+      "choice2": "Throw up in the bathroom.",
+      "outcome1": "<p class='outcome'>Her finger is cool to touch. The way she curls it round mine, it feels like a jigsaw.</p>",
+      "outcome2": "<p class='outcome'>Cold water in the face. Get back in there.</p>"
+    },
+    {
+      "scenario": "<p>He doesn’t seem that interested in movies</p><p>He seems more into documentaries and long boring non-fiction books.</p><p>He is always reading on his lunch break.</p><p>I just want to escape from the world all the time.</p><p>To be in love, you have to believe in fantasy,</p><p>you can’t start poking holes in it.</p><p>Otherwise, it falls apart</p>",
+      "choice1": "Move away?",
+      "choice2": "Take a chance?",
+      "outcome1": "<p class='outcome'>I'm not sure this is right.</p>",
+      "outcome2": "<p class='outcome'>It's like our fingers are dancing round each other.</p>"
+    },
+    {
+      "scenario": "<p>If this goes well, I’ll volunteer to save all the turtles.</p><p>Maybe we can go together and go somewhere like Costa Rica.</p><p>Do they speak Portuguese or Spanish there? Maybe she speaks Spanish</p><p>Does she like milk in her tea? Does she like Marmite or marmalade on her toast? Probably just butter</p><p>Probably just butter.</p><p>My mind is just racing. Take her hand and find out.</p>",
+      "choice1": "Put my hand on hers?",
+      "choice2": "Do the yawn and arms around the shoulder?",
+      "outcome1": "<p class='outcome'>I feel sick. I can't do it.</p>",
+      "outcome2": "<p class='outcome'>Trust me to elbow her in eye. I'll never live this down.</p>"
+    },
+    {
+      "scenario": "<p>I know he wants to hold my hand. Right?</p><p>I should just put him out of his misery and take his.</p><p>It’s not a will they won’t they.</p><p>We don’t need six seasons to get together.</p><p>Just a moment.</p><p>I can feel him there in the dark, heart beating.</p><p>Does he want me to take his hand? Am I allowed?</p><p>These dating rules were made in Hollywood.</p>",
+      "choice1": "Stuff the patriarchy.",
+      "choice2": "Hold back.",
+      "outcome1": "<p class='outcome'>Our fingers interlocked, skin on skin. He squeezes.</p>",
+      "outcome2": "<p class='outcome'>Please don't let the credits run. I don't want this to be over.</p>"
+    }
   ]
 }

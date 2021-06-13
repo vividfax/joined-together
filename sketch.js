@@ -6,16 +6,12 @@ let colors = {
   black: "#033F63",
 };
 let rgbColors = {
-  white: "#FFFFFF",
-  light: "#FFE486",
-  mid: "#CEBBD8",
   dark: "93,87,97",
-  black: "#033F63",
 };
-let scribble = new Scribble();
 
 let intro;
 let story;
+let end;
 let scenes = [];
 
 let leftImage;
@@ -27,9 +23,6 @@ let rightHand;
 let buttonOne;
 let buttonTwo;
 let clickables = [buttonOne, buttonTwo];
-
-let imgWidth = 792 * 0.4;
-let imgHeight = 1496 * 0.4;
 
 let audio;
 let interacted = false;
@@ -49,45 +42,64 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   textFont("Cabin Sketch");
   textAlign(CENTER, CENTER);
+  frameRate(5);
+  let noOfHands = 1;
+  rightHand = new Hand(rightImage, noOfHands);
+  noOfHands++;
+  leftHand = new Hand(leftImage, noOfHands);
+  leftHand.setup();
+  rightHand.setup();
 
-  let distance = width / 8;
-
-  rightHand = new Hand(width / 2 + distance, height - imgHeight, leftImage);
-  leftHand = new Hand(
-    width / 2 - imgWidth - distance,
-    height - imgHeight,
-    rightImage
+  scenes = new DialogScene(leftHand, rightHand);
+  intro = new IntroScene(leftHand, rightHand, scenes);
+  end = new EndingScene(leftHand, rightHand, scenes);
+  buttonOne = new Button(
+    width / 4 - 180,
+    (height / 4) * 3,
+    360,
+    80,
+    "button-one"
   );
-
-  intro = new IntroScene(leftHand, rightHand);
-  scenes = new DialogScene();
-  buttonOne = new Button(width / 4, (height / 5) * 4, 400, 80, "button-one");
   buttonTwo = new Button(
-    (width / 4) * 3,
-    (height / 5) * 4,
-    400,
+    (width / 4) * 3 - 240,
+    (height / 4) * 3,
+    360,
     80,
     "button-two"
   );
-
-  noLoop();
+  buttonOne.setup();
+  buttonTwo.setup();
+  intro.setup();
+  //   noLoop();
+  createGrain();
 }
 
 function draw() {
-  background(colors.light);
+  //   background(colors.light);
+  updatePixels();
   intro.start();
-  tint(255, 30);
-
+  //   tint(255, 50);
   rightHand.display();
   leftHand.display();
-  buttonOne.display();
-  buttonTwo.display();
-  buttonOne.changeText("test");
+  buttonOne.makeEvents();
+  buttonTwo.makeEvents();
 }
 
 function mousePressed() {
   if (!interacted) {
     // audio.play();
     interacted = true;
+  }
+}
+
+function createGrain() {
+  for (let i = 0; i < width; i++) {
+    for (let j = 0; j < height; j++) {
+      if (random() > 0.5) {
+        set(i, j, color(colors.light));
+      } else {
+        set(i, j, color("#FFE986"));
+      }
+    }
   }
 }

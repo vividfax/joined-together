@@ -6,41 +6,36 @@ class Button {
     this.height = height;
     this.domElement;
     this.id = id;
+    this.p5elt;
   }
-  display() {
-    // stroke(colors.dark);
-    // strokeWeight(2);
-    // scribble.bowing = 0;
-    // scribble.scribbleRect(this.x, this.y, this.width, this.height);
-
-    // rectMode(CENTER);
-    // noStroke();
-    // fill(colors.white);
-    // rect(this.x, this.y, this.width, this.height);
-    // fill(colors.dark);
-    // textSize(18);
-    // textFont("Avenir");
-    // rectMode(CORNER);
-    // textLeading(26);
-    let p5elt = createButton("Unchanged - use Button.changeText to update");
-    this.style(p5elt);
-    p5elt.position(this.x, this.y);
-    p5elt.id(this.id);
+  setup() {
+    this.p5elt = createButton("");
+    this.p5elt.position(this.x, this.y);
+    this.p5elt.id(this.id);
     this.domElement = select("#" + this.id).elt;
-    this.makeEvents();
+    this.p5elt.class("btn btn-6 btn-6d");
   }
   changeText(text) {
     this.domElement.innerHTML = text;
   }
   makeEvents() {
     this.domElement.onclick = function () {
-      console.log("clicked");
-      scenes.nextScene();
-      // animate hands
-      // change text
+      let decision;
+      if (this.id == "button-one") {
+        decision = "1";
+        scenes.nextScene(decision);
+      } else if (this.id == "button-two") {
+        decision = "2";
+        scenes.nextScene(decision);
+      } else {
+        end.start();
+      }
     };
   }
-  style(button) {
-    button.class("btn");
+  hide() {
+    this.p5elt.hide();
+  }
+  show() {
+    this.p5elt.show();
   }
 }

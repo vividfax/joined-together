@@ -1,35 +1,39 @@
 class IntroScene {
-  constructor(leftHand, rightHand) {
-    this.inProgress = false;
+  constructor(leftHand, rightHand, dialogScene) {
+    this.inProgress = true;
     this.leftHand = leftHand;
     this.rightHand = rightHand;
     this.upperHandPos;
     this.lowerHandPos;
+    this.movingPos;
+    this.dialogScene = dialogScene;
   }
   setup() {
     textFont("Cabin Sketch");
     textAlign(CENTER, CENTER);
-    this.upperHandPos = 1496 * 0.4;
-    this.lowerHandPos = percentToPixelHeight(5);
+    this.upperHandPos = height - this.leftHand.h;
+    this.lowerHandPos = percentToPixelHeight(80);
     this.addText();
+    this.movingPos = this.upperHandPos;
   }
   addText() {
     textSize(90);
-    fill("rgba(" + rgbColors.dark + ", 0.1)");
+    fill("rgba(" + rgbColors.dark + ", 1)");
     text("OUT\nOF\nTOUCH", width / 2, height / 2);
   }
   moveHandsDown() {
-    for (let i = this.upperHandPos; i < this.lowerHandPos; i += 2) {
-      this.leftHand.translateY = i;
-      this.rightHand.translateY = i;
+    if (this.movingPos < this.lowerHandPos) {
+      this.leftHand.y = this.movingPos;
+      this.rightHand.y = this.movingPos;
+      this.movingPos += 10;
     }
-    return true;
+    return false;
   }
   start() {
     this.inProgress = true;
+
     let handMoved = false;
     let textShown = false;
-    this.setup();
-    this.moveHandsDown();
+    this.inProgress = this.moveHandsDown();
   }
 }
