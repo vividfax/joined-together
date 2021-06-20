@@ -6,38 +6,47 @@ class DialogScene {
     this.currentScene = 0;
     this.leftHand = leftHand;
     this.rightHand = rightHand;
-    this.endButton;
+    // this.endButton;
     this.endOutcome;
+    this.handsMovedCloser = false;
+    this.handsMovedFurther = false;
+    this.handDistance;
   }
   nextScene(choice) {
     let outcome;
     if (
       story.story[this.currentScene - 1] != undefined &&
-      this.currentScene != story.story.length
+      this.currentScene <= story.story.length
     ) {
-      if (choice == "1" && this.currentScene == story.story.length - 2) {
+      // Ending scenario
+      if (choice == "1" && this.currentScene == story.story.length) {
         this.endOutcome = "positive";
         outcome = story.story[this.currentScene - 1].outcome1;
-      }
-      if (choice == "2" && this.currentScene == story.story.length - 2) {
+      } else if (choice == "2" && this.currentScene == story.story.length) {
         this.endOutcome = "negative";
         outcome = story.story[this.currentScene - 1].outcome2;
-      } else if (choice == "1") {
+      }
+      // Normal scenario
+      if (choice == "1" && this.currentScene < story.story.length) {
         outcome = story.story[this.currentScene - 1].outcome1;
-      } else {
+      } else if (choice == "2" && this.currentScene < story.story.length) {
         outcome = story.story[this.currentScene - 1].outcome2;
       }
-
       this.bodyTextElement.html(outcome);
-      this.bodyTextElement.html(story.story[this.currentScene].scenario, true);
-      buttonOne.changeText(story.story[this.currentScene].choice1);
-      buttonTwo.changeText(story.story[this.currentScene].choice2);
+
+      if (story.story[this.currentScene] != undefined) {
+        this.bodyTextElement.html(
+          story.story[this.currentScene].scenario,
+          true
+        );
+        buttonOne.changeText(story.story[this.currentScene].choice1);
+        buttonTwo.changeText(story.story[this.currentScene].choice2);
+      }
     } else if (this.currentScene == 0) {
       this.bodyTextElement.html(story.story[this.currentScene].scenario);
       buttonOne.changeText(story.story[this.currentScene].choice1);
       buttonTwo.changeText(story.story[this.currentScene].choice2);
     }
-    console.log(this.currentScene, " ", story.story.length);
     if (this.currentScene == story.story.length) {
       if (this.endOutcome == "positive") {
         outcome = story.story[this.currentScene - 1].outcome1;
@@ -45,34 +54,50 @@ class DialogScene {
       if (this.endOutcome == "negative") {
         outcome = story.story[this.currentScene - 1].outcome2;
       }
-      console.log(story.story, this.currentScene);
       this.bodyTextElement.html(outcome, false);
       buttonOne.hide();
       buttonTwo.hide();
-      this.endButton = new Button(
-        width / 2 - 240,
-        (height / 4) * 3,
-        360,
-        80,
-        "button-three"
-      );
-      this.endButton.setup();
-      this.endButton.makeEvents();
+      if (endButton == undefined) {
+        endButton = new Button(
+          width / 2 - 240,
+          (height / 4) * 3,
+          360,
+          80,
+          "button-three"
+        );
+        endButton.setup();
+        endButton.makeEvents();
+      }
     }
     if (this.currentScene < story.story.length) this.currentScene++;
   }
   moveHandsFurther() {
-    this.leftHand.x += 300;
-    this.rightHand.x -= 300;
+    if (
+      this.handsMovedFurther == false &&
+      this.handDistance > 50 &&
+      this.handDistance < 700
+    ) {
+      this.leftHand.x += 20;
+      this.rightHand.x -= 20;
+    } else this.handsMovedFurther = true;
   }
   moveHandsCloser() {
-    this.leftHand.x -= 200;
-    this.rightHand.x += 200;
+    if (
+      this.handsMovedCloser == false &&
+      this.handDistance < 600 &&
+      this.handDistance > -100
+    ) {
+      this.leftHand.x -= 20;
+      this.rightHand.x += 20;
+    } else this.handsMovedCloser = true;
   }
   hide() {
     this.bodyTextElement.hide();
   }
   show() {
     this.bodyTextElement.show();
+  }
+  calculateDistance() {
+    this.handDistance = this.leftHand.x - (this.rightHand.x + this.rightHand.w);
   }
 }

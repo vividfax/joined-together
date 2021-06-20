@@ -7,7 +7,6 @@ p {
   width: 100%;
   font-size: 16px;
   text-align: left;
-  margin: 0;
   /* transition: 0.3s linear all; */
 }
 
@@ -38,6 +37,14 @@ p {
 }
 .hide {
   display: none;
+}
+.he {
+  line-height: 1.2;
+  font-size: 1.1em;
+  word-spacing: -0.1rem;
+}
+.she {
+  line-height: 1.6;
 }
 h1 {
   position: absolute;

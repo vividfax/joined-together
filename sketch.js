@@ -11,7 +11,6 @@ let rgbColors = {
 let started = false;
 let intro;
 let story;
-let end;
 let scenes = [];
 
 let leftImage;
@@ -20,6 +19,7 @@ let curtain;
 
 let leftHand;
 let rightHand;
+let endButton;
 let buttonOne;
 let buttonTwo;
 let clickables = [buttonOne, buttonTwo];
@@ -49,8 +49,8 @@ function setup() {
   leftHand = new Hand(leftImage, noOfHands);
   leftHand.setup();
   rightHand.setup();
-  scenes = new DialogScene(leftHand, rightHand);
 
+  scenes = new DialogScene(leftHand, rightHand);
   end = new EndingScene(leftHand, rightHand, scenes);
   buttonOne = new Button(
     width / 4 - 180,
@@ -86,6 +86,10 @@ function draw() {
   leftHand.display();
   buttonOne.makeEvents();
   buttonTwo.makeEvents();
+  if (endButton != undefined && endButton.end == true) {
+    scenes.calculateDistance();
+    end.start();
+  }
 }
 
 function mousePressed() {
@@ -113,8 +117,11 @@ function mouseClicked() {
     buttonTwo.show();
     scenes.show();
     scenes.bodyTextElement.show();
-    scenes.nextScene(0);
+    scenes.nextScene();
     audio.play();
     started = true;
   }
+}
+function endingButton() {
+  endButton.end = true;
 }

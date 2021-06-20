@@ -7,6 +7,7 @@ class Button {
     this.domElement;
     this.id = id;
     this.p5elt;
+    this.end = false;
   }
   setup() {
     this.p5elt = createButton("");
@@ -27,11 +28,12 @@ class Button {
       } else if (this.id == "button-two") {
         decision = "2";
         scenes.nextScene(decision);
-      } else {
-        end.start();
+      } else if (this.id == "button-three") {
+        endingButton();
       }
     };
   }
+
   hide() {
     this.p5elt.hide();
   }

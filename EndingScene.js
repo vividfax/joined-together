@@ -7,20 +7,14 @@ class EndingScene {
     this.movingPos;
     this.outcome = outcome;
   }
-  setup() {}
   start() {
-    this.inProgress = true;
     this.dialogScenes.bodyTextElement.hide();
-    this.dialogScenes.endButton.hide();
+    endButton.hide();
     if (this.dialogScenes.endOutcome == "positive") {
-      if (this.leftHand.x - (this.rightHand.x + this.rightHand.w) > 50) {
-        this.dialogScenes.moveHandsCloser();
-      }
+      this.dialogScenes.moveHandsCloser();
     }
     if (this.dialogScenes.endOutcome == "negative") {
-      if (this.leftHand.x - (this.rightHand.x + this.rightHand.w) < 800) {
-        this.dialogScenes.moveHandsFurther();
-      }
+      this.dialogScenes.moveHandsFurther();
     }
   }
 }

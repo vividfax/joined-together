@@ -25,9 +25,7 @@ class IntroScene {
     this.title.toggleClass("hide");
   }
   moveHandsUp() {
-    console.log(this.movingPos, " ", this.upperHandPos, this.handsMovedUp);
     if (this.movingPos > this.upperHandPos && this.handsMovedUp == false) {
-      console.log("test");
       this.leftHand.y = this.movingPos;
       this.rightHand.y = this.movingPos;
       this.movingPos -= 50;
@@ -39,22 +37,28 @@ class IntroScene {
       this.handsMovedUp = true;
     }
   }
-  //   moveHandsDown() {
-  //     if (this.movingPos < this.lowerHandPos) {
-  //       this.leftHand.y = this.movingPos;
-  //       this.rightHand.y = this.movingPos;
-  //       this.movingPos += 50;
-  //     } else if (this.handsMovedDown == true && this.handsMovedUp == false) {
-  //       this.handsMovedDown == true;
-  //     }
-  //   }
-
+  moveHandsDown() {
+    if (this.movingPos < this.lowerHandPos && this.handsMovedDown == false) {
+      this.leftHand.y = this.movingPos;
+      this.rightHand.y = this.movingPos;
+      this.movingPos += 50;
+    } else if (this.handsMovedDown == false) {
+      this.handsMovedDown = true;
+    }
+    this.moveHandsUp();
+  }
+  moveHandsUp() {
+    if (
+      this.movingPos > this.upperHandPos &&
+      this.handsMovedDown == true &&
+      this.handsMovedUp == false
+    ) {
+      this.leftHand.y = this.movingPos;
+      this.rightHand.y = this.movingPos;
+      this.movingPos -= 50;
+    } else this.handsMovedUp == true;
+  }
   start() {
-    // if (this.handsMovedDown == false) {
-    //   this.moveHandsDown();
-    // }
-    // if (this.handsMovedUp == false && this.handsMovedDown == true) {
-    //   this.moveHandsUp();
-    // }
+    this.moveHandsDown();
   }
 }
