@@ -67,6 +67,7 @@ class DialogScene {
         );
         endButton.setup();
         endButton.makeEvents();
+        endButton.changeText("...");
       }
     }
     if (this.currentScene < story.story.length) this.currentScene++;
