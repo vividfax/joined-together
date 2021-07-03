@@ -8,7 +8,8 @@ let colors = {
 let rgbColors = {
   dark: "93,87,97",
 };
-let started = false;
+let gameStarted = false;
+let shownButtons = false;
 let intro;
 let story;
 let scenes = [];
@@ -16,6 +17,7 @@ let scenes = [];
 let leftImage;
 let rightImage;
 let curtain;
+let audioIsPlaying = false;
 
 let leftHand;
 let rightHand;
@@ -78,9 +80,14 @@ function setup() {
 }
 
 function draw() {
-  //   background(colors.light);
+  if (audioIsPlaying == false) {
+    audio.play();
+    audioIsPlaying = true;
+  }
   updatePixels();
-  intro.start();
+  if (interacted == true) {
+    gameStarted = intro.start();
+  }
   //   tint(255, 50);
   rightHand.display();
   leftHand.display();
@@ -94,7 +101,6 @@ function draw() {
 
 function mousePressed() {
   if (!interacted) {
-    // audio.play();
     interacted = true;
   }
 }
@@ -111,15 +117,14 @@ function createGrain() {
   }
 }
 function mouseClicked() {
-  if (started == false) {
+  if (gameStarted == true && shownButtons == false) {
     intro.showHide();
     buttonOne.show();
     buttonTwo.show();
     scenes.show();
     scenes.bodyTextElement.show();
     scenes.nextScene();
-    audio.play();
-    started = true;
+    shownButtons = true;
   }
 }
 function endingButton() {

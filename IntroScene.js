@@ -24,19 +24,6 @@ class IntroScene {
   showHide() {
     this.title.toggleClass("hide");
   }
-  moveHandsUp() {
-    if (this.movingPos > this.upperHandPos && this.handsMovedUp == false) {
-      this.leftHand.y = this.movingPos;
-      this.rightHand.y = this.movingPos;
-      this.movingPos -= 50;
-    } else {
-      this.showHide();
-      this.dialogScene.show();
-      this.buttonOne.show();
-      this.buttonTwo.show();
-      this.handsMovedUp = true;
-    }
-  }
   moveHandsDown() {
     if (this.movingPos < this.lowerHandPos && this.handsMovedDown == false) {
       this.leftHand.y = this.movingPos;
@@ -45,7 +32,7 @@ class IntroScene {
     } else if (this.handsMovedDown == false) {
       this.handsMovedDown = true;
     }
-    this.moveHandsUp();
+    return this.moveHandsUp();
   }
   moveHandsUp() {
     if (
@@ -56,9 +43,19 @@ class IntroScene {
       this.leftHand.y = this.movingPos;
       this.rightHand.y = this.movingPos;
       this.movingPos -= 50;
-    } else this.handsMovedUp == true;
+      return false;
+    } else if (
+      this.movingPos == this.upperHandPos &&
+      this.handsMovedDown == true &&
+      this.handsMovedUp == false
+    ) {
+      this.handsMovedUp = true;
+      return true;
+    } else if (this.handsMovedDown == true && this.handsMovedUp == true)
+      return true;
+    else return false;
   }
   start() {
-    this.moveHandsDown();
+    return this.moveHandsDown();
   }
 }
